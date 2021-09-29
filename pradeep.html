@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <style>
+        .main{
+            width:280px;
+            height:270px;
+            position:relative;
+        }
+
+        #first, #second,  #third, #fourth{
+            position:absolute;
+            background-color:orange;
+            border-radius:100px;
+            height:60px;
+            width:60px;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        #first{
+            background-color:orange;
+        }
+ 
+        #second{
+            background-color:yellow;
+            right:0;
+        }
+ 
+        #third{
+            background-color:green;
+            left:0;
+            bottom:0;
+        }
+        #fourth{
+            background-color:skyblue;
+            bottom:0;
+            right:0;;
+        }
+ 
+        @keyframes example {
+            from {
+                width:60px;
+            }
+            to {
+                width:270px
+            }
+        }
+        @keyframes example1 {
+            from {
+                height:70px;
+            }
+            to {
+                height:270px
+            }
+        }
+
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="first" ></div>
+        <div id="second"></div>
+        <div id="third"></div>
+        <div id="fourth"></div>
+    </div>
+    <div style="margin: 70px; display:flex; gap:50px">
+        <button id="start-button" onclick="addClass()">START</button>
+        <button id="stop-button" onclick="removeClass()">STOP</button>
+    </div>
+
+    <script>
+        //Start Animation on button click
+        function addClass() {
+            document.getElementById("first").style.animationName = "example";
+            document.getElementById("second").style.animationName = "example1";
+            document.getElementById("third").style.animationName = "example1";
+            document.getElementById("fourth").style.animationName = "example";
+        }
+
+        //Stop Animation on button click
+        function removeClass() {
+            document.getElementById("first").style.animationName = "none";
+            document.getElementById("second").style.animationName = "none";
+            document.getElementById("third").style.animationName = "none";
+            document.getElementById("fourth").style.animationName = "none";
+        }
+    </script>
+</body>
+</html>
